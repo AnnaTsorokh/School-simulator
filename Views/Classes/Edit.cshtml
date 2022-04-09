@@ -1,0 +1,74 @@
+﻿@model School.Models.Class
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<div>
+    <h4>Class</h4>
+    <hr />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    <h6><b>Class name</b></h6>
+                </th>
+                <th>
+                    <h6><b>Students count</b></h6>
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.ClassName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.Students.Count)
+                </td>
+                <td>
+                    <a asp-controller="Classes" asp-action="Rename" asp-route-id="@Model.Id">Rename</a>
+                </td>
+            </tr>
+            </dl>
+            <table class="table">
+                <h4><b>Information about students</b></h4>
+                <thead>
+                    <tr>
+                        <th>
+                            <h6><b>Student's name</b></h6>
+                        </th>
+                        <th>
+                            <h6><b>Student's surname</b></h6>
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Students)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Surname)
+                            </td>
+                            <td>
+                                <a asp-controller="Students" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                                <a asp-controller="Students" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                                <a asp-controller="Students" asp-action="DeleteFromClass" asp-route-id="@item.Id">Delete from class</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+</div>
+<div>
+    
+    <a asp-controller="Students" asp-action="Create" asp-route-classId="@Model.Id" >Add new student to class</a> | 
+    <a asp-action="Index">Back</a>
+</div>

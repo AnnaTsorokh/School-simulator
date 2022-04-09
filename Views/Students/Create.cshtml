@@ -1,0 +1,52 @@
+﻿@model School.ViewModels.StudentCreateViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Student</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Student.Name" class="control-label"></label>
+                <input asp-for="Student.Name" class="form-control" />
+                <span asp-validation-for="Student.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Student.Surname" class="control-label"></label>
+                <input asp-for="Student.Surname" class="form-control" />
+                <span asp-validation-for="Student.Surname" class="text-danger"></span>
+            </div> 
+           @if (Model.Student.ClassId == null )
+            {
+                 <div class="form-group">
+                <label asp-for="Student.ClassId" class="control-label">Class</label>
+                <select asp-for="Student.ClassId" class="form-control">
+                    <option value="null" disabled="disabled" selected="selected">Choose student class name</option>
+                    @foreach (var item in Model.Classes)
+                    {
+                       <option value="@item.Id">@item.ClassName</option>
+                    }
+                    <option value="null">out of classes</option>
+                </select>
+                </div>
+            }
+            <div class="form-group">
+                <input type="submit" value="Create" asp-route-Student="@Model.Student" asp-route-Student.ClassId="@Model.Student.ClassId" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a href="@Model.StudentCreateBackUrl" >Back</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

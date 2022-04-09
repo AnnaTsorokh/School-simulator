@@ -1,0 +1,52 @@
+﻿@model School.ViewModels.ClassCreateViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Class</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NewClass.ClassName" class="control-label">Name</label>
+                <input asp-for="NewClass.ClassName" placeholder = "Enter name" class="form-control" />
+                <span asp-validation-for="NewClass.ClassName" class="text-danger"></span>
+            </div>
+            @if (@Model.StudentsOutOfClasses.Count != 0)
+            {
+                <div class="form-group">
+                <label asp-for="StudentsIds" class="control-label">Students</label>
+                <select asp-for="StudentsIds" class="form-control">
+                    @foreach(var item in Model.StudentsOutOfClasses)
+                    {
+                       <option value="@item.Id">@item.Name @item.Surname</option>
+                    }
+                </select>
+                </div>
+            }
+            else
+            {
+                <div class="form-group">
+                <label class="control-label">Students</label>
+                <input disabled placeholder="There are no students out of classes" class="form-control"></input>
+                </div>
+            }
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

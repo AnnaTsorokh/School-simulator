@@ -1,0 +1,42 @@
+﻿@model School.ViewModels.StudentDetailsViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Student</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Student.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Student.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Student.Surname)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Student.Surname)
+        </dd>
+        <dt class = "col-sm-2">
+            <h6><b>Class name</b></h6>
+        </dt>
+        <dd class = "col-sm-10">
+            @if(Model.Student.Class == null)
+            {
+                <p>out of classes</p>
+            }
+            else
+            {
+                @Html.DisplayFor(model => model.Student.Class.ClassName)
+            } 
+        </dd>
+    </dl>
+</div>
+<div>
+    <a href="@Model.StudentDetailsBackUrl">Back</a>
+</div>

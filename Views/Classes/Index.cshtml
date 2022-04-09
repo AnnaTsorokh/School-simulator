@@ -1,0 +1,79 @@
+﻿@model School.ViewModels.ClassesIndexViewModel
+
+@{
+    ViewData["Title"] = "Classes";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+              <h6><b>Name</b></h6>
+            </th>
+            <th>
+              <h6><b>Student count</b></h6>
+            </th>
+        </tr>
+        <tr>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Classes) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClassName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Students.Count)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+<table class="table">
+            @if (Model.StudentsOutOfClass.Count == 1)
+            {
+                <h5><b>There is @Model.StudentsOutOfClass.Count student out of classes</b></h5>
+            }
+            else
+            {
+                <h5><b>There are @Model.StudentsOutOfClass.Count students out of classes</b></h5>
+            }
+    <thead>
+        <tr>
+            <th>
+              <h6><b>Name</b></h6>
+            </th>
+            <th>
+              <h6><b>Surname</b></h6>
+            </th>
+        </tr>
+        <tr>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.StudentsOutOfClass) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Surname)
+            </td>
+            <td>
+                <a asp-controller="Students" asp-action="Edit"  asp-route-id="@item.Id">Edit</a> |
+                <a asp-controller="Students" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-controller="Students" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
