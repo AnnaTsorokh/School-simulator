@@ -11,11 +11,11 @@ namespace School.Models
                 context.Classes.AddRange(
                     new Class 
                     { 
-                        ClassName = "test0" 
+                        ClassName = "FirstClass" 
                     },
                     new Class
                     { 
-                        ClassName = "test1" 
+                        ClassName = "SecondClass" 
                     });
                 context.SaveChanges();
             }
@@ -24,26 +24,26 @@ namespace School.Models
                 context.Students.AddRange(
                      new Student
                      {
-                         Name = "test0",
-                         Surname = "test0",
+                         Name = "Student1",
+                         Surname = "Surname1",
                          ClassId = context.Classes.ToList().First().Id
                      },
                      new Student
                      {
-                         Name = "test1",
-                         Surname = "test1",
+                         Name = "Student2",
+                         Surname = "Surname2",
                          ClassId = context.Classes.ToList().First().Id
                      },
                      new Student
                      {
-                         Name = "test2",
-                         Surname = "test2",
+                         Name = "Student3",
+                         Surname = "Surname3",
                          ClassId = context.Classes.ToList().First().Id
                      },
                      new Student
                      {
-                         Name = "test3",
-                         Surname = "test3",
+                         Name = "Student4",
+                         Surname = "Surname4",
                          ClassId = context.Classes.ToList().Last().Id
                      });
                 context.SaveChanges();

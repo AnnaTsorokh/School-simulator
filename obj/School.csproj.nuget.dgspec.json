@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\.Net\\School\\School.csproj": {}
+    "D:\\GitHub\\SchoolProcedures\\School.csproj": {}
   },
   "projects": {
-    "D:\\.Net\\School\\School.csproj": {
+    "D:\\GitHub\\SchoolProcedures\\School.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\.Net\\School\\School.csproj",
+        "projectUniqueName": "D:\\GitHub\\SchoolProcedures\\School.csproj",
         "projectName": "School",
-        "projectPath": "D:\\.Net\\School\\School.csproj",
+        "projectPath": "D:\\GitHub\\SchoolProcedures\\School.csproj",
         "packagesPath": "C:\\Users\\anyat\\.nuget\\packages\\",
-        "outputPath": "D:\\.Net\\School\\obj\\",
+        "outputPath": "D:\\GitHub\\SchoolProcedures\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\anyat\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EwF0nmS241CD6IIbzNP0+u/hLC7JBCxTl5st4GGCRCMSyjzemPV0cK4B0uiet9rAYnkFoKN3x/fajT/FtID4xA==",
+  "dgSpecHash": "qbSfZGBspNYvnZo2vMs9MScV4IqnNCsTRf2sReCOQ1tYqb8AXYJZqfRaO4HCxB7b/JZ9MunhJWJgoVbukUlHQw==",
   "success": true,
-  "projectFilePath": "D:\\.Net\\School\\School.csproj",
+  "projectFilePath": "D:\\GitHub\\SchoolProcedures\\School.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\anyat\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\anyat\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
